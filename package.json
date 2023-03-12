@@ -1,0 +1,22 @@
+{
+  "name": "personal-cafeteria",
+  "version": "1.0.0",
+  "description": "Aprendiendo SASS, Gulp, CSS Grid",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JorgeDevmm/personal-cafeteria.git"
+  },
+  "author": "Jorge Luis Monzón Morales",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JorgeDevmm/personal-cafeteria/issues"
+  },
+  "homepage": "https://github.com/JorgeDevmm/personal-cafeteria#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
