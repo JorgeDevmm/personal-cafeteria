@@ -1,12 +1,16 @@
 const { src, dest, watch, series, parallel } = require('gulp'); //{} mas de una función,watc = tarea repetitiva, dest guardar
+
+// CSS Y SASS
 const sass = require('gulp-sass')(require('sass')); //compilar
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 
-function css(done) {
-  // Compilar sass
-  // pasos: 1 - identificar archivo, 2 - Compilarla, 3 - Guardar el .css
+// IMAGENES
+const imagemin = require('gulp-imagemin');
 
+// Compilar sass
+function css(done) {
+  // pasos: 1 - identificar archivo, 2 - Compilarla, 3 - Guardar el .css
   src('src/scss/app.scss')
     .pipe(sass())
     .pipe(postcss([autoprefixer()]))
@@ -17,7 +21,9 @@ function css(done) {
 
 function imagenes(done) {
   // se puede poner return en vez de done
-  src('src/img/**/*').pipe(dest('build/img'));
+  src('src/img/**/*')
+    .pipe(imagemin({ optimizationLevel: 3 })) //minimizar img
+    .pipe(dest('build/img'));
 
   done();
 }
