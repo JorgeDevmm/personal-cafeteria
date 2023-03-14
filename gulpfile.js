@@ -15,15 +15,24 @@ function css(done) {
   done(); //Finalizar tareas
 }
 
+function imagenes(done) {
+  // se puede poner return en vez de done
+  src('src/img/**/*').pipe(dest('build/img'));
+
+  done();
+}
+
+// función cuando existan nuevos cambios
 function dev() {
   // revisar, ejecutar
   watch('src/scss/**/*.scss', css);
-  watch('src/scss/app.scss', css);
+  watch('src/img/**/*', imagenes);
 }
 
 exports.css = css;
 exports.dev = dev;
-exports.default = series(css, dev); //tarea por default - gulp
+exports.imagenes = imagenes;
+exports.default = series(imagenes, css, dev); //tarea por default - gulp
 
 // series - Se inicia una tarea, y hasta que finaliza, inicia la siguiente
 // parallel - Todas inician al mismo tiempo
