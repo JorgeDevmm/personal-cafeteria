@@ -16,6 +16,7 @@
   @include m.desktop {
     padding: 2rem;
   }
+
   &::before {
     content: '';
     background-color: v.$negro;
